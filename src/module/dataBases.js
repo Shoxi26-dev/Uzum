@@ -1,17 +1,49 @@
 export let slides = [
     { img: 'https://images.uzum.uz/d3916gt2llnbileph2vg/main_page_banner.jpg' },
     { img: 'https://images.uzum.uz/d3dp4ba1146soq7c9jq0/main_page_banner.jpg' },
+    { img: 'https://images.uzum.uz/d0cs058s9rf1gld5q1ug/main_page_banner.jpg' },
+    { img: 'https://images.uzum.uz/d2tdb9niub35i07jlgn0/main_page_banner.jpg' },
     { img: 'https://images.uzum.uz/d3916gt2llnbileph2vg/main_page_banner.jpg' },
     { img: 'https://images.uzum.uz/d3dp4ba1146soq7c9jq0/main_page_banner.jpg' },
+    { img: 'https://images.uzum.uz/d0cs058s9rf1gld5q1ug/main_page_banner.jpg' },
+    { img: 'https://images.uzum.uz/d2tdb9niub35i07jlgn0/main_page_banner.jpg' },
     { img: 'https://images.uzum.uz/d3916gt2llnbileph2vg/main_page_banner.jpg' },
     { img: 'https://images.uzum.uz/d3dp4ba1146soq7c9jq0/main_page_banner.jpg' },
+    { img: 'https://images.uzum.uz/d0cs058s9rf1gld5q1ug/main_page_banner.jpg' },
+    { img: 'https://images.uzum.uz/d2tdb9niub35i07jlgn0/main_page_banner.jpg' },
     { img: 'https://images.uzum.uz/d3916gt2llnbileph2vg/main_page_banner.jpg' },
-    { img: 'https://images.uzum.uz/d3dp4ba1146soq7c9jq0/main_page_banner.jpg' }
-    
-    
-  
+    { img: 'https://images.uzum.uz/d3dp4ba1146soq7c9jq0/main_page_banner.jpg' },
+    { img: 'https://images.uzum.uz/d0cs058s9rf1gld5q1ug/main_page_banner.jpg' },
+    { img: 'https://images.uzum.uz/d2tdb9niub35i07jlgn0/main_page_banner.jpg' }
 ];
 export let cards = [
+  {
+    title: "Fairy Platinum Средство для мытья посуды, лимон, 450мл",
+    price: 28000,
+    old_price: 29900,
+    monthly_payment: "2 050 so'm/oyiga",
+    rating: 4.9,
+    reviews: 2100,
+    quantity: 0
+  },
+  {
+    title: "Fairy Platinum Средство для мытья посуды, лимон, 450мл",
+    price: 28000,
+    old_price: 29900,
+    monthly_payment: "2 050 so'm/oyiga",
+    rating: 4.9,
+    reviews: 2100,
+    quantity: 0
+  },
+  {
+    title: "Fairy Platinum Средство для мытья посуды, лимон, 450мл",
+    price: 28000,
+    old_price: 29900,
+    monthly_payment: "2 050 so'm/oyiga",
+    rating: 4.9,
+    reviews: 2100,
+    quantity: 0
+  },
   {
     title: "Fairy Platinum Средство для мытья посуды, лимон, 450мл",
     price: 28000,

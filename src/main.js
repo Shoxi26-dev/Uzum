@@ -75,7 +75,7 @@ function post(api) {
 
   }
 }
-// 
+
 function createCard(arr) {
   for (let item of arr) {
     let card = document.createElement('div');
