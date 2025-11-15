@@ -1,15 +1,13 @@
-<!doctype html>
-<html lang="ru">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./src/style.css">
-  <title>uzum</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Document</title>
 </head>
-
-
-<section class="location-nav">
+<body>
+    <section class="location-nav">
   <div class="location">
     <div class="container">
       <nav>
@@ -163,7 +161,7 @@
               </div>
             </form>
             <div class="user-data-nav">
-              <button id="enter">
+              <button>
                 <svg data-v-212921f5="" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   xmlns="http://www.w3.org/2000/svg" class="ui-icon ">
                   <path fill-rule="evenodd" clip-rule="evenodd"
@@ -172,7 +170,7 @@
                 </svg>
                 Войти
               </button>
-              <button id="favorites">
+              <button>
                 <svg data-v-212921f5="" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   xmlns="http://www.w3.org/2000/svg" class="ui-icon ">
                   <path fill-rule="evenodd" clip-rule="evenodd"
@@ -181,7 +179,7 @@
                 </svg>
                 Избранное
               </button>
-              <button id="cart">
+              <button>
                 <svg data-v-212921f5="" width="24" height="24" viewBox="0 0 24 24" fill="black"
                   xmlns="http://www.w3.org/2000/svg" class="ui-icon  slightly transparent icon-cart">
                   <path fill-rule="evenodd" clip-rule="evenodd"
@@ -218,7 +216,7 @@
         <a href="">
           <img src="https://static.uzum.uz/baner/smart2110.png" alt="">
           Смартфоны
-        </a>  
+        </a>
         <div class="extra">
           <a href="" class="underline-anim">
             Туризм, рыбалка и охота
@@ -247,154 +245,23 @@
     </div>
   </section>
 
-  <section class="categories-nav">
-    <nav>
-      <div class="categories-box">
 
-      </div>
-    </nav>
-  </section>
-
-
-  <section class="UZswiper">
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper"> </div>
-      <div class="swiper-button-next"><svg data-v-50d1f060="" viewBox="0 0 24 24" fill="var(--gray-15)"
-          xmlns="http://www.w3.org/2000/svg" class="ui-icon ">
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M8.18945 20.4983C7.91426 20.1887 7.94215 19.7146 8.25174 19.4394L16.1211 12L8.25173 4.56055C7.94215 4.28536 7.91426 3.81131 8.18945 3.50172C8.46464 3.19213 8.93869 3.16425 9.24828 3.43944L17.7483 11.4394C17.9084 11.5818 18 11.7858 18 12C18 12.2142 17.9084 12.4182 17.7483 12.5605L9.24828 20.5605C8.93869 20.8357 8.46464 20.8079 8.18945 20.4983Z"
-            fill="black"></path>
-        </svg></div>
-      <div class="swiper-button-prev"><svg data-v-50d1f060="" viewBox="0 0 24 24" fill="var(--gray-15)"
-          xmlns="http://www.w3.org/2000/svg" class="ui-icon ">
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M15.8106 20.4983C16.0857 20.1887 16.0579 19.7146 15.7483 19.4394L7.8789 12L15.7483 4.56055C16.0579 4.28536 16.0857 3.81131 15.8106 3.50172C15.5354 3.19213 15.0613 3.16425 14.7517 3.43944L6.25173 11.4394C6.09161 11.5818 6 11.7858 6 12C6 12.2142 6.09161 12.4182 6.25173 12.5605L14.7517 20.5605C15.0613 20.8357 15.5354 20.8079 15.8106 20.4983Z"
-            fill="black"></path>
-        </svg></div>
-      <div class="swiper-pagination"></div>
+  <section class="cart">
+  <div class="if-no-goods">
+    <div class="no-goods-content">
+      <img src="https://uzum.uz/static/img/shopocat.490a4a1.png" height="128px"  height="128px" alt="No-goods-in-cart">
+      <h3>В корзине пока пусто</h3>
+      <p>Начните с главной страницы — нужный товар можно найти через поиск или заглянуть в подборки</p>
+      <button id="to-header-page">На главную</button>
     </div>
-  </section>
+  </div>
+  <div class="goods">
+
+  </div>
+</section>
 
 
-  <section class="catigories-btns">
-    <div class="categories">
-      <div class="flex-box">
-        <button class="elem">
-          <img src="https://static.uzum.uz/static/promo_images/6c43b09b-5f55-4a1c-85ac-3a06d46e97e6" alt="">
-          <div data-v-584b8b2a=""><span data-v-584b8b2a="">
-              Avtotovarlar
-            </span></div>
-        </button>
-        <button class="elem">
-          <img src="https://static.uzum.uz/static/promo_images/a266cae1-db3a-4b40-a984-cf9220d9b2e8" alt="">
-          <div data-v-584b8b2a=""><span data-v-584b8b2a="">
-              Гарантия низких цен
-            </span></div>
-        </button>
-        <button class="elem">
-          <img src="https://static.uzum.uz/static/promo_images/a64b835e-8bc5-4ada-9f56-aa7f0c96d792" alt="">
-          <div data-v-584b8b2a=""><span data-v-584b8b2a="">
-              Модный <br>
-              базар
-            </span></div>
-        </button>
-        <button class="elem">
-          <img src="https://static.uzum.uz/static/promo_images/49d522fa-2132-4059-a5fe-82c7e092742a" alt="">
-          <div data-v-584b8b2a=""><span data-v-584b8b2a="">
-              Розыгрыш <br>
-              призов
-            </span></div>
-        </button>
-
-      </div>
-    </div>
-  </section>
-
-
-
-  <section class="good-box">
-    <div class="popular">
-      <div class="text">
-        <a>Популярное <img src="./public/icons/right-arrow.png" alt=""></a>
-
-      </div>
-      <div class="prods">
-        <div class="popular-prods">
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="offer-box">
-    <div class="offers">
-      <div class="company-prew">
-        <img src="https://images.uzum.uz/cvcg2f5pb7f9qcni5d30/main_page_banner.jpg" alt="">
-      </div>
-    </div>
-  </section>
-  <section class="good-box">
-    <div class="popular">
-      <div class="text">
-        <a href="#">Новая коллекция <img src="./public/icons/right-arrow.png" alt=""></a>
-
-      </div>
-      <div class="prods">
-        <div class="one-str">
-
-        </div>
-      </div>
-    </div>
-    <div class="popular">
-      <div class="text">
-        <a href="#">Ноутбуки и приставки
-          <img src="./public/icons/right-arrow.png" alt=""></a>
-
-      </div>
-      <div class="prods">
-        <div class="one-str">
-
-        </div>
-      </div>
-    </div>
-    <div class="popular">
-      <div class="text">
-        <a href="#">Всё для здоровья
- <img src="./public/icons/right-arrow.png" alt=""></a>
-
-      </div>
-      <div class="prods">
-        <div class="one-str">
-
-        </div>
-      </div>
-    </div>
-    <div class="popular">
-      <div class="text">
-        <a href="#">Ваша красота
- <img src="./public/icons/right-arrow.png" alt=""></a>
-
-      </div>
-      <div class="prods">
-        <div class="one-str">
-
-        </div>
-      </div>
-    </div>
-    <div class="popular">
-      <div class="text">
-        <a href="#">Хиты продаж
- <img src="./public/icons/right-arrow.png" alt=""></a>
-
-      </div>
-      <div class="prods">
-        <div class="one-str">
-
-        </div>
-      </div>
-    </div>
-  </section>
-  <footer class="footer-section">
+   <footer class="footer-section">
     <div class="footer">
       <div class="container2">
         <h2>О нас</h2>
@@ -542,11 +409,11 @@
                     <path d="M24 0c20 0 24 4 24 24s-4 24-24 24S0 44 0 24 4 0 24 0Z" fill="red"></path>
                     <path fill-rule="evenodd" clip-rule="evenodd"
                       d="M36.502 13.657a3.972 3.972 0 0 1 2.83 2.778C40 18.886 40 24 40 24s0 5.114-.669 7.565a3.972 3.972 0 0 1-2.829 2.778C34.006 35 24 35 24 35s-10.007 0-12.502-.657a3.973 3.973 0 0 1-2.83-2.778C8 29.114 8 24 8 24s0-5.114.669-7.565a3.973 3.973 0 0 1 2.829-2.778C13.992 13 24 13 24 13s10.006 0 12.502.657ZM29 24l-8 4.75v-9.5L29 24Z"
-                      fill="#fff"></path>
+                      fill="#fffffff2"></path>
                   </g>
                   <defs>
                     <clipPath id="clip0_13094_71909">
-                      <path fill="#fff" d="M0 0h48v48H0z"></path>
+                      <path fill="#1fde22ff" d="M0 0h48v48H0z"></path>
                     </clipPath>
                   </defs>
                 </svg>
@@ -569,10 +436,7 @@
   </footer>
 </div>
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script type="module" crossorigin src="/src/main.js"></script>
+<script  src="../pages/cart.js"></script>
+<script  src="./cart.js"></script>
 </body>
-
 </html>

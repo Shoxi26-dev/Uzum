@@ -29,6 +29,7 @@ button {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    font-weight: 500;
   }
 
   .right {
@@ -68,27 +69,98 @@ button {
   }
 }
 
-.underline-anim {
-  position: relative;
-  display: inline-block;
-  color: #222;
-  text-decoration: none;
-  font-size: 14px;
+.trends {
+  padding-top: 15px;
+
+
+  .trends-nav {
+    nav {
+      height: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      a {
+        font-size: 12px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #000;
+        gap: 5px;
+        height: 25px;
+
+        img {
+          height: 24px;
+          width: 24px;
+        }
+      }
+
+      .extra {
+
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        align-items: flex-end;
+
+        .underline-anim {
+          padding-top: 1.3px;
+          height: 22px;
+          font-weight: 400;
+          position: relative;
+          display: inline-block;
+          color: #4d4f59c0;
+          text-decoration: none;
+          font-size: 13.5px;
+        }
+
+        button {
+          border: none;
+          background: none;
+          height: 22px;
+          font-weight: 400;
+          padding-bottom: 5px;
+
+          color: #4d4f59c0;
+          text-decoration: none;
+          font-size: 13.5px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+
+          gap: 5px;
+
+        }
+
+      }
+    }
+  }
 }
+
+.trends .trends-nav nav .extra .underline-anim:hover {
+  color: #000;
+}
+
+.trends .trends-nav nav .extra .underline-anim button:hover {
+  color: #000;
+}
+
+
 
 .underline-anim::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -1px;
+  bottom: -3px;
   width: 0;
-  height: 2px;
+  height: 1.5px;
   background-color: #222;
   transition: width 0.3s ease;
 }
 
 .underline-anim:hover::after {
   width: 100%;
+
 }
 
 .site-svg svg {
@@ -122,6 +194,8 @@ button {
         color: rgb(127, 77, 255);
         border: none;
         background-color: #e5e5ff;
+        font-weight: 500;
+        font-size: 14px;
 
         .slider-icon {
           display: flex;
@@ -137,14 +211,14 @@ button {
 
             .slider-icon-top-line {
               height: 1.6px;
-              width: 14px;
+              width: 11px;
               background-color: rgb(127, 77, 255);
               border-radius: 2px;
             }
 
             .slider-icon-middle-line {
               height: 1.7px;
-              width: 17px;
+              width: 14px;
               background-color: rgb(127, 77, 255);
               border-radius: 2px;
             }
@@ -315,7 +389,7 @@ button {
 }
 
 .elem:hover {
-  background-color: #00000041;
+  background-color: #0000002a;
   transition: 0.4s ease;
 }
 
@@ -359,9 +433,13 @@ button {
   padding-top: 30px;
   padding-bottom: 30px;
 
-  h2 {
+  a {
     align-items: center;
     display: flex;
+    text-decoration: none;
+    color: #000;
+    font-size: 28px;
+    font-weight: 700;
 
     img {
       padding-top: 3.5px;
@@ -372,9 +450,14 @@ button {
 }
 
 .prods {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+
+  .popular-prods,
+  .one-str {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+
 }
 
 .card:hover {
@@ -389,14 +472,15 @@ button {
     border-bottom-right-radius: 0px;
 
     img {
-      transform: scale(1.03);
-      transition: transform 0.5s ease;
+      height: 65%;
+      width: 65%;
+      transition: 0.5s;
     }
   }
 }
 
 .card {
-  width: 230px;
+  width: 220px;
   height: 470px;
   border-radius: 20px;
   display: flex;
@@ -404,10 +488,23 @@ button {
 
   .preview {
     height: 309px;
-    width: 232px;
+    width: 222px;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
+
+    img {
+      object-fit: contain;
+      position: absolute;
+      width: 60%;
+      height: 60%;
+      top: 50%;
+      left: 50%;
+      right: 50%;
+      bottom: 50%;
+      transform: translate(-50%, -50%);
+    }
+
 
     svg {
       cursor: pointer;
@@ -430,15 +527,16 @@ button {
       margin-left: 1.5px;
 
       h3 {
-        font-size: 14px;
+        font-size: 17px;
         font-weight: 500;
         color: #7f4dff;
+        padding-right: 5px;
       }
     }
 
     h4 {
       margin-left: 1.5px;
-      font-size: 10px;
+      font-size: 14px;
       font-weight: 400;
       color: #535252ec;
     }
@@ -527,6 +625,155 @@ button {
 .in-phone {
   display: none;
 }
+
+
+.offer-box {
+  margin-top: 30px;
+
+  .offers {
+    .company-prew {
+      overflow: hidden;
+      width: 100%;
+      border-radius: 15px;
+
+      img:hover {
+        transition: 0.5s;
+        cursor: pointer;
+        transform: scale(1.03);
+        transition: transform 0.5s ease;
+
+      }
+    }
+  }
+}
+
+.footer {
+  padding-top: 70px;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+  width: 300px;
+  text-align: left;
+  font-size: 12px;
+
+  h2 {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  a {
+    text-decoration: none;
+    color: #4d4f59c0;
+  }
+
+  .svg {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 50px;
+
+    .apple {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+  }
+}
+
+.apps {
+  width: 230px;
+}
+
+.s_m {
+  width: 230px;
+}
+
+
+
+.copyright {
+  display: flex;
+  margin: 30px 0 0 0;
+  border-top: 1px solid #afb0b3c0;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 50px;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  text-align: center;
+
+  p {
+    color: #4d4f59c0;
+    font-size: 10px;
+  }
+}
+
+.gap {
+  display: flex;
+  gap: 15px;
+
+  a {
+    text-decoration: none;
+    color: #000;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
+
+.google {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sotial-icons {
+  display: flex;
+  gap: 10px;
+}
+
+
+.cart {
+  padding-bottom: 70px;
+  padding-top: 70px;
+  .if-no-goods{
+    .no-goods-content{
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h3{
+        font-size: 22px;
+        font-weight: 500;
+      }
+      p{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 13px;
+        font-weight: 400;
+      }
+      button{
+        width: 108px;
+        height: 38px;
+        border: none;
+        background-color: #93959a3b;
+        border-radius: 4px;
+      }
+      button:hover{
+        background-color: #d0d3d9;
+        transition: 0.3s;
+      }
+    }
+  }
+}
+
+
 
 @media (max-width: 415px) {
   body {
@@ -664,9 +911,11 @@ button {
       }
     }
   }
-  .in-phone{
+
+  .in-phone {
     display: block;
-    .search-inp{
+
+    .search-inp {
       width: 100%;
     }
   }

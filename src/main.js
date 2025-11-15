@@ -1,4 +1,4 @@
-import { slides, cards } from '/src/module/dataBases.js';
+import { slides, cardsApi } from '/src/module/dataBases.js';
 import Swiper from 'swiper';
 import { Navigation, Pagination, Keyboard, Mousewheel, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -9,26 +9,41 @@ import 'swiper/css/pagination';
 let slideBox = document.querySelector('.swiper-wrapper');
 
 createSlide(slides);
-function createSlide(arr) {
-  for (let item of arr) {
-    let slide = document.createElement('div');
-    slide.className = 'swiper-slide';
-    slide.innerHTML = `
-  
-        <img src="${item.img}" alt="">
-        
-  `
-    slideBox.appendChild(slide);
-  }
-}
+
 
 swiperLogic()
 
 
-let cardBox = document.querySelector('.prods');
+let prods = document.querySelector('.popular-prods');
 
-createCard(cards);
-let favoriteBtns = document.querySelectorAll('.favorite')
+getCard(cardsApi,prods);
+
+
+let cartBtn = document.querySelector('#cart')
+cartBtn.onclick = () => {
+  window.location.href = "./src/pages/cart.html";
+}
+
+
+let headerBtn = document.querySelector('#to-header-page')
+if (headerBtn) {
+  headerBtn.onclick = () => {
+  window.location.href = "./index.html";
+  console.log('hi');
+  
+}
+}
+
+
+let oneStr = document.querySelectorAll('.one-str')
+render(cardsApi,oneStr)
+
+
+
+
+
+setTimeout(() => {
+  let favoriteBtns = document.querySelectorAll('.favorite')
 for (let btn of favoriteBtns) {
   btn.innerHTML = `
     <svg data-v-6bb51ffe="" width="16" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" alt="like" class="ui-icon  actions__favorite-icon">
@@ -48,40 +63,57 @@ for (let btn of favoriteBtns) {
 </svg>`
     }
   }
+  
+  
 }
 
-let API_URL = 'http://localhost:8000';
 
 
-
+let API_URL = 'http://localhost:8080';
 post(API_URL)
 
-function post(api) {
-  let addBtn = document.querySelectorAll('.add');
-  for (let btn of addBtn) {
-    btn.onclick = () => {
+}, 1000);
 
-      const card = btn.closest('.card');
-      const data = {
-        title: card.querySelector('.decs p')?.textContent.trim(),
-        price: card.querySelector('.card-price h3')?.textContent.trim(),
-        quantity: 12
-
-      };
-      axios.post(`${api}/cart`, data)
-        .then(response => console.log(data));
-    }
-
-
+function createSlide(arr) {
+  for (let item of arr) {
+    let slide = document.createElement('div');
+    slide.className = 'swiper-slide';
+    slide.innerHTML = `
+  
+        <img src="${item.img}" alt="">
+        
+  `
+    slideBox.appendChild(slide);
   }
 }
 
-function createCard(arr) {
-  for (let item of arr) {
+
+function render(api,cardBox) {
+  cardBox.forEach((item) => {
+ 
+  let limited = `${api}?&_limit=5`;
+  getCard(limited, item);
+});
+  
+    
+  
+}
+
+
+function getCard(api, cardBox) {
+  axios.get(api)
+  .then(response => response.data)
+  .then(data => {
+    for (let item of data) {
+    let cardInnerLink = document.createElement('a')
     let card = document.createElement('div');
+
+    card.dataset.company = item.company;
+    cardInnerLink.href = '#'
+    cardInnerLink.style.textDecoration = 'none'
     card.className = 'card';
     card.innerHTML = `<div class="preview">
-            <img src="https://images.uzum.uz/ce4pavqvtie1lhbehr4g/t_product_540_high.jpg" alt="">
+            <img src="${item.image}" alt="preview">
             <button class='favorite'>
             <svg data-v-6bb51ffe="" width="16" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" alt="like" class="ui-icon  actions__favorite-icon">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.24598 3.20325C6.73891 1.80054 4.45606 1.49005 2.69571 2.99414C0.824803 4.59268 0.554859 7.28051 2.03204 9.18134C2.6046 9.91812 3.7305 11.0342 4.82293 12.0653C5.92494 13.1054 7.02476 14.0887 7.56728 14.5691L7.57645 14.5773C7.62882 14.6237 7.6876 14.6757 7.74296 14.7174C7.80745 14.766 7.89419 14.8218 8.00791 14.8557C8.16277 14.9019 8.32952 14.9019 8.48437 14.8557C8.59809 14.8218 8.68484 14.766 8.74933 14.7174C8.80469 14.6757 8.86346 14.6237 8.91583 14.5773L8.925 14.5691C9.46753 14.0887 10.5674 13.1054 11.6694 12.0653C12.7618 11.0342 13.8877 9.91812 14.4602 9.18134C15.933 7.2862 15.7029 4.57848 13.7914 2.98975C12.0091 1.50846 9.75167 1.79994 8.24598 3.20325ZM7.86618 4.24982C6.68042 2.86356 4.76961 2.53746 3.3453 3.75441C1.87614 5.0097 1.67585 7.09332 2.82164 8.56772C3.33949 9.23409 4.40879 10.2993 5.50933 11.3381C6.6003 12.3678 7.69124 13.3431 8.23027 13.8205C8.2358 13.8254 8.24108 13.8301 8.24614 13.8346C8.25121 13.8301 8.25649 13.8254 8.26202 13.8205C8.80104 13.3431 9.89198 12.3678 10.983 11.3381C12.0835 10.2993 13.1528 9.23409 13.6706 8.56772C14.8209 7.08764 14.6382 4.99388 13.1522 3.7588C11.694 2.54686 9.80809 2.86797 8.6261 4.24982C8.53111 4.36087 8.39228 4.42481 8.24614 4.42481C8.1 4.42481 7.96118 4.36087 7.86618 4.24982Z" fill="#1F2026"></path>
@@ -91,7 +123,7 @@ function createCard(arr) {
           <div class="card-content">
             <div class="price">
               <div class="card-price">
-                <h3>${item.price}</h3>
+                <h3>${item.price.toLocaleString('ru-RU')}</h3>
                 <svg data-v-37eba868="" width="16" height="16" viewBox="0 0 16 16" fill="none"
                   xmlns="http://www.w3.org/2000/svg" class="ui-icon ">
                   <path
@@ -149,10 +181,10 @@ function createCard(arr) {
                   </defs>
                 </svg>
               </div>
-              <h4>${item.old_price}</h4>
+              <h4>${item.old_price.toLocaleString('ru-RU')}</h4>
             </div>
             <div class="perY">
-              <p>${item.monthly_payment}</p>
+              <p>${item.monthly_payment.toLocaleString('ru-RU')} сум/мес</p>
             </div>
             <div class="decs">
               <p>${item.title}</p>
@@ -167,8 +199,8 @@ function createCard(arr) {
                 </svg>
               </div>
 
-              <span>${item.rating}</span>
-              <span>(${item.reviews} sharhlar)</span>
+              <span>${item.rating.rate}</span>
+              <span>(${item.rating.count} отзывов)</span>
             </div>
             <div class="add-cart">
               <button class='add'><svg data-v-2ad2a792="" width="16" height="16" viewBox="0 0 17 17" fill="none"
@@ -179,14 +211,39 @@ function createCard(arr) {
                 </svg>Add to cart</button>
             </div>
           </div>`
-    cardBox.append(card);
+          
+    cardBox.append(card); 
   }
+  });
+  
 }
 
 
+function post(api) {
+  let addBtn = document.querySelectorAll('.add');
+  for (let btn of addBtn) {
+    btn.onclick = () => {
+
+      const card = btn.closest('.card');
+      const data = {
+        title: card.querySelector('.decs p')?.textContent.trim(),
+        price: card.querySelector('.card-price h3')?.textContent.trim(),
+        quantity: 1,
+        company: card.dataset.company 
+
+      };
+      axios.post(`${api}/cart`, data)
+        .then(response => console.log());
+        
+    }
 
 
-function swiperLogic(params) {
+  }
+  
+  
+}
+
+function swiperLogic() {
   document.addEventListener('DOMContentLoaded', () => {
     const swiper = new Swiper('.mySwiper', {
       modules: [Navigation, Pagination, Keyboard, Mousewheel, Autoplay],
